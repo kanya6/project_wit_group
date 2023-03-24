@@ -1,50 +1,38 @@
 # public 
 resource "aws_subnet" "public_1" {
   vpc_id = aws_vpc.project.id
-  cidr_block = "10.0.1.0/24"
-  availability_zone = "us-east-1a"
-  tags = {
-    Name = "public-1"
-  }
+  cidr_block =  var.public_1_cidr
+  availability_zone = var.public1_zone
+  tags = var.pub_subnet_tags
 } 
 resource "aws_subnet" "public_2" {
   vpc_id = aws_vpc.project.id
-  cidr_block = "10.0.2.0/24"
-  availability_zone = "us-east-2a"
-  tags = {
-    Name = "public-2"
-  }
+  cidr_block =  var.public_2_cidr
+  availability_zone =  var.public2_zone
+  tags = var.pub_subnet_tags
 }
 resource "aws_subnet" "public_3" {
   vpc_id = aws_vpc.project.id
-  cidr_block = "10.0.3.0/24"
-  availability_zone = "us-east-3a"
-  tags = {
-    Name = "public-3"
-  }
+  cidr_block =  var.public_3_cidr
+  availability_zone = var.public3_zone
+  tags = var.pub_subnet_tags
 }
  #private
- resource "aws_subnet" "private-1" {
+ resource "aws_subnet" "private_1" {
   vpc_id = aws_vpc.project.id
-  cidr_block = "101.0.0.0/24"
-  availability_zone = "us-east-1a"
-  tags = {
-    Name = "private-1"
-  }
+  cidr_block = var.private_1_cidr
+  availability_zone = var.private1_zone
+  tags = var.priv_subnet_tags
 } 
-resource "aws_subnet" "private-2" {
+resource "aws_subnet" "private_2" {
   vpc_id = aws_vpc.project.id
-  cidr_block = "102.0.0.0/24"
-  availability_zone = "us-east-2a"
-  tags = {
-    Name = "private-2"
-  }
+  cidr_block = var.private_2_cidr
+  availability_zone = var.private2_zone
+  tags = var.priv_subnet_tags
 }
-resource "aws_subnet" "private-3" {
+resource "aws_subnet" "private_3" {
   vpc_id = aws_vpc.project.id
-  cidr_block = "103.0.0.0/24"
-  availability_zone = "us-east-3a"
-  tags = {
-    Name = "private-3"
-  }
+  cidr_block = var.private_3_cidr
+  availability_zone = var.private3_zone
+  tags = var.priv_subnet_tags
 }
